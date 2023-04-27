@@ -64,4 +64,95 @@ The function will return the array `[50, 100, 150]`. Even though the array `disc
 
     `student.courseLoad[0]`
 
+13. Arithmetic
+    A. '3' + 2
+
+    Output: `32`
+    This is the output because the `3` is written as a string instead of just an integer. Then, the `+` indicates concatenation of strings, so `2` is treated as another string. This results in the output of `32`.
+
+    B. '3' - 2
+
+    Output: `1`
+    The output is `1` because although `3` is written as a string, the following operation is subtraction, which cannot be done on a string. Thus, the integer value of `3` is used instead and 2 is subtracted from `3`, resulting in the value `1`.
+
+    C. 3 + null
+
+    Output: `3`
+    The output is `3` because we are adding the integer value of `3` with `null`. In javascript, `null` is treated like the value `0`, thus the result of `3+null` is synonymus with `3+0`.
+
+    D. '3' + null
+
+    Output: `3null`
+    The output is `3null` because `3` is written as a string value. The following operation indicates string concatenation, thus we get the string `3null` as the output.
+
+    E. true + 3
+
+    Output: `4`
+    In javascript, `true` is synonymus with the value of `1`. Thus, this expression is synonymus with `1+3`. This gives us the output of `4`.
+
+    F. false + null
+
+    Output: `0`
+    `false` and `null` both have the value of `0`. Thus, adding them together will result in the value `0`.
+
+    G. '3' + undefined
+
+    Output: `3undefined`
+    Since `3` is written as a string and is followed by the addition operation, we know that this will be string concatenation. Thus, the output will be `3undefined`.
+
+    H. '3' - undefined
+
+    Output: `NaN`
+    While `3` is written as a string, the following operation is subtraction, which cannot be done on a string. Thus, `3` is taken by its integer value. Based on numeric conversion rules, `undefined = NaN`. Thus, the end result of subtracting `Nan` from `3` is still `NaN`.
+
+14. Comparison
+    A. '2' > 1
+
+    Output: `true`
+    The output is true because the numerical value of the string `2` is greater than the numerical value of `1`.
+
+    B. '2' < '12'
+
+    Output: `false`
+    The output is false because the string `2` is greater than the string `12`. In this case, since both are strings, the comparison is done character by character. Thus, `2` is being compared `1` and the numerical value of `2` is greater than `1`, so the result for this comparison is false.
+
+    C. 2 == '2'
+
+    Output: `true`
+    Despite the different types, the numerical value of both are the same: `2`. As a result, the output is `true`.
+
+    D. 2 === '2'
+
+    Output: `false`
+    The === uses strict type comparisons. Since integer `2` is not the same type as `'2'`, this comparison outputs `false`.
+
+    E. true == 2
+
+    Output: `false`
+    The numerical conversion of `true` is `1`. Since `1` is not equal to `2`, so the output is `false`.
+
+    F. true === Boolean(2)
+
+    Output: `true`
+    The Boolean value of `2` is `true`. Values that are greater than or equal to `1` will have a boolean value of `true`. Since the types of both ends of the operator are both booleans and they are both `true`, the output of the comparison is `true`.
+
+15. Explain the difference between the == and === operators.
+
+The difference between == and === is that == allows for type conversion while === does not allow for type conversion when checking equality. For instance, the == will check the equality of 1 and true, even though they are different types. Checking `true == 1` will return true. However, the === checks based on type and value. Thus, `true == 1` will return false because they are different types.
+
+16. Given the above Object, write a for...in loop that will iterate through it and print out the value of the property if the property starts with the letter r, or if the value of that property is an odd number.
+
+Answer in part2-question16.js
+
+17. If the function above is called with the following parameters modifyArray([1, 2, 3], doSomething), what will be the result? Breifly walk through how you arrived at that result.
+
+The result is `[2,4,6]`. First, we go to the function modifyArray because that was the function that we called with the parameters `[1,2,3]` and `doSomething`. Inside the function modifyArray, we create an empty array called `newArr`. Inside the for loop, for each element in the array, we use the callback function: `doSomething`. At `i = 0`, doSomething will take in the value `array[0] = 1` and multiply `1 * 2`. Then, after `doSomething` finishes executing, we push that value into `newArr`. We do the same with the next two elements in the array. In other words, `doSomething` will return `4` for `i = 1` and `6` for `i = 3`. These two values will also get pushed into `newArr`. Then, `newArr` is returned, which is how we get the result `[2,4,6]`.
+
+18. The above program only prints out the time once when executed. Modify this code such that the program prints out the time every second.
+
+Answer in part2-question18.js
+
+19. What is the output of the above code? 
+
+The output of the above code is `1, 4, 3, 2`.
   
